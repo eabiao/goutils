@@ -64,19 +64,3 @@ func (ja *JSONArray) GetFloat(index int) float64 {
 	value, _ := strconv.ParseFloat(str, 64)
 	return value
 }
-
-func (ja *JSONArray) GetStringArray() []string {
-	var aa []string
-	for _, v := range ja.a {
-		aa = append(aa, v.(string))
-	}
-	return aa
-}
-
-func (ja *JSONArray) GetIntArray() []int {
-	var aa []int
-	for _, v := range ja.a {
-		aa = append(aa, v.(int))
-	}
-	return aa
-}

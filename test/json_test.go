@@ -55,7 +55,8 @@ func TestJSONArray2(t *testing.T) {
 	  1,
 	  "aa",
 	  "1.123",
-	  true
+	  true,
+	  [1, 2, 3, 4]
 	]`
 
 	jsonArray, err := json.ToJSONArray([]byte(jsonText))
@@ -67,4 +68,5 @@ func TestJSONArray2(t *testing.T) {
 	fmt.Println(jsonArray.GetString(1))
 	fmt.Println(jsonArray.GetFloat(2))
 	fmt.Println(jsonArray.GetBool(3))
+	fmt.Println(jsonArray.GetJSONArray(4).GetInt(0))
 }
